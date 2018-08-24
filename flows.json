@@ -1,0 +1,76 @@
+[
+    {
+        "id": "92e39f37.387a1",
+        "type": "watch",
+        "z": "336101a5.0d0c0e",
+        "name": "Watch My DIR",
+        "files": "\"C:\\\\Users\\\\<put your username here>\\\\\"",
+        "recursive": true,
+        "x": 259,
+        "y": 261,
+        "wires": [
+            [
+                "b5925e30.9401e",
+                "4d88def2.17a21"
+            ]
+        ]
+    },
+    {
+        "id": "95898bf2.2ca328",
+        "type": "file",
+        "z": "336101a5.0d0c0e",
+        "name": "Save My DIR",
+        "filename": "C:\\UserLogs\\<put your username here>.log",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "x": 558,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b5925e30.9401e",
+        "type": "template",
+        "z": "336101a5.0d0c0e",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Filename: {{name}},\nSize: {{size}},\nType: {{type}},\nfilepath:{{payload}}",
+        "output": "str",
+        "x": 408,
+        "y": 262,
+        "wires": [
+            [
+                "95898bf2.2ca328"
+            ]
+        ]
+    },
+    {
+        "id": "3709dc2c.b2c884",
+        "type": "comment",
+        "z": "336101a5.0d0c0e",
+        "name": "Click Me Once, Never Twice, and look on the Right",
+        "info": "You __need to__ change <fields> in everything the function node is connected to. The function node, to be exact, is connected to this node.\n\n_Made By Nathan_",
+        "x": 403,
+        "y": 133,
+        "wires": []
+    },
+    {
+        "id": "4d88def2.17a21",
+        "type": "function",
+        "z": "336101a5.0d0c0e",
+        "name": "Don't worry about me. I do nothing.",
+        "func": "return null",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 431,
+        "y": 188,
+        "wires": [
+            [
+                "95898bf2.2ca328"
+            ]
+        ]
+    }
+]
